@@ -43,11 +43,11 @@ impl<T: Ord> BinaryHeap<T> where T: std::fmt::Display {
         }
     }
 
-    pub fn remove_top(&mut self) -> T{
+    pub fn remove_top(&mut self) -> T {
         let top_element = self.heap.swap_remove(0);
         let mut index = 0;
+
         while (index * 2) + 2 <= self.count() {
-         
             let bigger_child_index;
             if self.heap[(index * 2) + 1] > self.heap[(index * 2) + 2] {
                 bigger_child_index = (index * 2) + 1;
@@ -63,7 +63,7 @@ impl<T: Ord> BinaryHeap<T> where T: std::fmt::Display {
             }
         }
 
-        if (index * 2) + 1 < self.count() && self.heap[(index * 2) + 1] > self.heap[index] {
+        if index * 2 + 1 < self.count() && self.heap[index * 2 + 1] > self.heap[index] {
             self.heap.swap((index * 2) + 1, index);
         }
 
