@@ -1,4 +1,3 @@
-use std;
 pub fn heap_sort<T: Ord>(elements: &mut Vec<T>) {
     let elements_count = elements.len();
     for index in (0..elements.len() / 2).rev() {

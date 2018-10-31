@@ -1,5 +1,6 @@
 pub mod binary_heap;
 pub mod sort_algorithms;
+pub mod tests;
 fn main() {
     test_binary_heap();
     test_heap_sort()
